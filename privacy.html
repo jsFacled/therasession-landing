@@ -19,12 +19,12 @@
         }
         .privacy-header {
             margin-bottom: 50px;
-            text-align: left; /* Alineado a la izquierda */
+            text-align: left;
             border-bottom: 2px solid var(--color-border);
             padding-bottom: 20px;
         }
         .privacy-content {
-            text-align: left; /* Aseguramos alineación a la izquierda */
+            text-align: left;
         }
         .privacy-content h2 {
             color: var(--color-primary);
@@ -42,7 +42,7 @@
         .privacy-content ul {
             margin-bottom: 25px;
             padding-left: 25px;
-            list-style-type: none; /* Quitamos el estilo por defecto */
+            list-style-type: none;
         }
         .privacy-content li {
             margin-bottom: 12px;
@@ -51,12 +51,11 @@
             position: relative;
             padding-left: 20px;
         }
-        /* Añadimos un punto personalizado para mayor control visual */
         .privacy-content li::before {
             content: "•";
             color: var(--color-primary);
             font-weight: bold;
-            display: inline-block; 
+            display: inline-block;
             width: 1em;
             margin-left: -1em;
             position: absolute;
@@ -112,26 +111,28 @@
                 <ul>
                     <li>No requiere registro de usuario</li>
                     <li>No crea cuentas</li>
-                    <li>No utiliza servidores externos</li>
-                    <li>No transmite información al desarrollador</li>
-                    <li>No recopila datos para análisis o seguimiento</li>
+                    <li>No transmite información personal al desarrollador</li>
+                    <li>No incluye seguimiento publicitario</li>
+                    <li>No recopila analíticas clínicas</li>
                 </ul>
-                <p>Toda la información gestionada por la aplicación permanece exclusivamente en el dispositivo del usuario.</p>
+                <p>La información clínica gestionada por la aplicación permanece en el dispositivo del usuario.</p>
+                <p>TheraSession utiliza Firebase Crashlytics únicamente para diagnóstico técnico de fallos y estabilidad de la aplicación. Crashlytics no se utiliza para recopilar notas clínicas, registros de pacientes, contenido de sesiones ni datos de seguimiento publicitario.</p>
 
                 <h2>3. Información que puede almacenar la aplicación</h2>
                 <p>La aplicación permite al usuario ingresar información manualmente para su uso profesional. Esta información puede incluir:</p>
                 <ul>
                     <li>Nombres de pacientes</li>
-                    <li>Correos electrónicos (opcional)</li>
+                    <li>Correos electrónicos opcionales</li>
                     <li>Notas de sesión</li>
                     <li>Fechas y horarios de citas</li>
+                    <li>Recordatorios de citas</li>
                     <li>Otra información relacionada con la gestión de pacientes</li>
                 </ul>
                 <p>Todos los datos son ingresados voluntariamente por el usuario.</p>
 
                 <h2>4. Almacenamiento de la información</h2>
-                <p>Toda la información ingresada en TheraSession se almacena únicamente en el dispositivo del usuario mediante una base de datos local. La aplicación utiliza almacenamiento local del sistema Android (SQLite mediante la librería Room).</p>
-                <p>Neticware no tiene acceso a esta información. La aplicación no transmite datos a servidores externos.</p>
+                <p>Toda la información ingresada en TheraSession se almacena localmente en el dispositivo del usuario mediante una base de datos local. La aplicación utiliza almacenamiento local del sistema Android, SQLite mediante la librería Room.</p>
+                <p>Neticware no tiene acceso a esta información. La aplicación no transmite datos clínicos a servidores externos.</p>
 
                 <h2>5. Uso de la información</h2>
                 <p>La información ingresada en la aplicación se utiliza exclusivamente para permitir al usuario:</p>
@@ -140,19 +141,21 @@
                     <li>Organizar citas</li>
                     <li>Registrar notas de sesión</li>
                     <li>Administrar su información profesional</li>
+                    <li>Recibir recordatorios locales relacionados con citas</li>
                 </ul>
-                <p>Neticware no utiliza, analiza ni procesa estos datos.</p>
+                <p>Neticware no utiliza, analiza ni procesa estos datos clínicos.</p>
 
                 <h2>6. Compartición de datos</h2>
-                <p>TheraSession no comparte información con terceros. La aplicación:</p>
+                <p>TheraSession no comparte información clínica con terceros. La aplicación:</p>
                 <ul>
                     <li>No vende datos</li>
-                    <li>No transmite información a servicios externos</li>
+                    <li>No transmite información clínica a servicios externos</li>
                     <li>No incluye publicidad</li>
-                    <li>No utiliza herramientas de seguimiento</li>
+                    <li>No utiliza servicios de seguimiento publicitario</li>
                     <li>No integra redes sociales</li>
                 </ul>
-                <p>Toda la información permanece bajo control exclusivo del usuario en su dispositivo.</p>
+                <p>La información clínica permanece bajo control exclusivo del usuario en su dispositivo.</p>
+                <p>Los reportes de fallos pueden enviarse a Firebase Crashlytics únicamente con fines de diagnóstico técnico. Estos reportes ayudan a identificar errores inesperados y problemas de estabilidad, sin incluir notas clínicas, registros de pacientes ni contenido de sesiones.</p>
 
                 <h2>7. Seguridad</h2>
                 <p>La información se almacena localmente en el dispositivo del usuario. El acceso a los datos depende de los mecanismos de seguridad configurados en el dispositivo, como bloqueo de pantalla, contraseña o autenticación biométrica.</p>
@@ -169,7 +172,8 @@
                 <h2>9. Permisos de la aplicación</h2>
                 <p>TheraSession puede solicitar permisos básicos del sistema necesarios para su funcionamiento, como:</p>
                 <ul>
-                    <li>Notificaciones (para recordatorios de citas)</li>
+                    <li>Notificaciones, para recordatorios de citas</li>
+                    <li>Recepción de reinicio del dispositivo, para restaurar recordatorios locales después de reiniciar el teléfono</li>
                 </ul>
                 <p>Estos permisos se utilizan exclusivamente para funcionalidades internas de la aplicación. La aplicación no accede a datos personales fuera de la información ingresada voluntariamente por el usuario.</p>
 
@@ -195,7 +199,7 @@
 
     <footer class="footer">
         <div class="container footer-container">
-            <p>&copy; TheraSession - by 
+            <p>&copy; TheraSession - by
                 <a href="https://neticware.com.ar" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; vertical-align: middle;">
                     <img src="assets/images/ic_nw_sinFondo.png" alt="Logo Neticware" class="rotating-logo" style="height: 24px; width: auto;">
                     Neticware
